@@ -17,15 +17,11 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(
-    process.env.DB_CNN ||
-        'mongodb+srv://raulnunez:HwdsD12REPZ1xPFV@cluster0.arivp.mongodb.net/amazona',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    }
-);
+mongoose.connect(process.env.DB_CNN, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+});
 
 // app.get('/api/products', (req, res) => {
 //     res.send( data.products );
